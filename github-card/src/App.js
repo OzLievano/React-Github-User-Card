@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserCard from './components/UserCard'
+import Navbar from './components/NavBar'
 
 class App extends Component {
   constructor(){
@@ -22,6 +23,7 @@ class App extends Component {
   render() { 
     return ( 
       <div>
+        <Navbar/>
         <UserCard info={this.state.usercards}/>
       </div>
      );
