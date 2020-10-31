@@ -47,7 +47,7 @@ class App extends Component {
       <div>
         <Navbar/>
         <UserCard info={this.state.usercards}/>
-        <Followers followers={this.state.followers}/>
+        <Followers followers={this.state.followers} key={this.state.followers.id}/>
       </div>
      );
   }
