@@ -6,7 +6,8 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      usercards:[]
+      usercards:[],
+      followers:[]
     }
   }
 
@@ -19,12 +20,21 @@ class App extends Component {
       })
     })
     .catch(err=>console.log(err))
+
+    fetch("https://api.github.com/users/Ozlievano/followers")
+    .then(res =>res.json())
+    .then((json)=>{
+      this.setState({
+        followers:json
+      })
+    })
+    .catch(err=>console.log(err))
   }
   render() { 
     return ( 
       <div>
         <Navbar/>
-        <UserCard info={this.state.usercards}/>
+        <UserCard info={this.state.usercards} followers={this.state.followers}/>
       </div>
      );
   }
