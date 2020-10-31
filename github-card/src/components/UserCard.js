@@ -1,7 +1,9 @@
 import React from 'react'
-import {Card,CardHeader,CardImg,CardBody,Container} from 'reactstrap'
+import {useHistory} from 'react-router-dom'
+import {Card,CardHeader,CardImg,CardBody,Container, Button} from 'reactstrap'
  
 function UserCard(props) {
+    const history = useHistory();
     console.log(props)
     return (
         <Container className="d-flex justify-content-center mt-5">
@@ -10,6 +12,11 @@ function UserCard(props) {
                 <CardHeader>
                     <h1>{props.info.login}</h1>
                 </CardHeader>
+                <CardBody>
+                    About {props.info.name}:
+                    {`${props.info.name} is located in ${props.info.location} as a ${props.info.bio} working at ${props.info.company}.${props.info.name} has contributedto over ${props.info.public_repos} and is following ${props.info.following} other users on GitHub.`}
+                </CardBody>
+                {/* <Button onClick={()=>history.push(`${props.info.url}`)}> Visit Profile</Button> */}
             </Card> 
         </Container>
     )
