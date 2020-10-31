@@ -13,8 +13,8 @@ function UserCard(props) {
                     <h1>{props.info.login}</h1>
                 </CardHeader>
                 <CardBody>
-                    About {props.info.name}:
-                    {`${props.info.name} is located in ${props.info.location} as a ${props.info.bio} working at ${props.info.company}.${props.info.name} has contributedto over ${props.info.public_repos} and is following ${props.info.following} other users on GitHub.`}
+                    About {props.info.name}: 
+                    {` ${props.info.name} is located in ${props.info.location} as a ${props.info.bio} working at ${props.info.company}. ${props.info.name} has contributed to over ${props.info.public_repos} and is following ${props.info.following} other users on GitHub.`}
                 </CardBody>
                 <Button onClick={()=>history.push('https://github.com/OzLievano')}> Visit Profile</Button>
             </Card> 
