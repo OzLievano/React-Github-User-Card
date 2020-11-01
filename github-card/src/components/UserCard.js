@@ -1,13 +1,14 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import {Card,CardHeader,CardImg,CardBody,Container, Button} from 'reactstrap'
+import {Card,CardHeader,CardImg,CardBody,Container, Button,Form} from 'reactstrap'
  
 function UserCard(props) {
     const history = useHistory();
     console.log(props)
     return (
-        <Container className="d-flex justify-content-center mt-5">
-            <Card>
+        
+        <Container className="d-flex-column justify-content-center mt-5">
+            <Card> 
                 <CardImg src={props.info.avatar_url} alt="avatar Url" style={{width:'25%'}} />
                 <CardHeader>
                     <h1>{props.info.login}</h1>
