@@ -14,9 +14,10 @@ function UserCard(props) {
                 </CardHeader>
                 <CardBody>
                     About {props.info.name}: 
-                    {` ${props.info.name} is located in ${props.info.location} as a ${props.info.bio} working at ${props.info.company}. ${props.info.name} has contributed to over ${props.info.public_repos} and is following ${props.info.following} other users on GitHub.`}
+                    {` ${props.info.name} is located in ${props.info.location} as a ${props.info.bio} working at ${props.info.company}. ${props.info.name} has contributed to over ${props.info.public_repos} repositories and is following ${props.info.following} other users on GitHub.`}
                 </CardBody>
                 <Button><a style={{textDecoration:'none', color:'#ffffff'}} href="https://github.com/Ozlievano">Visit Profile</a></Button>
+                
             </Card> 
         </Container>
     )

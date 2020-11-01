@@ -49,7 +49,7 @@ class App extends Component {
     return ( 
       <div>
         <Navbar/>
-        <UserCard info={this.state.usercards}/>
+        <UserCard info={this.state.usercards} key={this.state.usercards.id}/>
         <Followers followers={this.state.followers} key={this.state.followers.id}/>
       </div>
      );
