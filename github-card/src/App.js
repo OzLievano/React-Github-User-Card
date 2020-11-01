@@ -8,7 +8,8 @@ class App extends Component {
     super();
     this.state={
       usercards:[],
-      followers:[]
+      followers:[],
+      hasError:false
     }
   }
 
@@ -16,9 +17,11 @@ class App extends Component {
 
     Promise.all([fetch('https://api.github.com/users/OzLievano'),fetch('https://api.github.com/users/Ozlievano/followers')])
     .then(([res1,res2])=>{
+      console.log(res1,res2)
       return Promise.all([res1.json(),res2.json()])
     })
     .then(([res1,res2])=>{
+      console.log(res1,res2)
       this.setState({
         usercards:res1,
         followers:res2
