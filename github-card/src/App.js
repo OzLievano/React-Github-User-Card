@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserCard from './components/UserCard'
 import Navbar from './components/NavBar'
 import Followers from './components/Followers'
+import {Input} from 'reactstrap'
 
 class App extends Component {
   constructor(){
@@ -9,7 +10,7 @@ class App extends Component {
     this.state={
       usercards:[],
       followers:[],
-      username:'username',
+      username:'',
       hasError:false
     }
   }
@@ -54,7 +55,7 @@ class App extends Component {
     return ( 
       <div>
         <Navbar/>
-        <input type="text" value={this.state.username} onChange={this.userNameChange}/>
+        <input className="mt-5 ml-5"type="text" value={this.state.username} onChange={this.userNameChange} placeholder="enter username" />
         <button onClick={this.handleUserNameChange}>Set New User</button>
         <UserCard info={this.state.usercards} key={this.state.usercards.id}/>
         <Followers followers={this.state.followers} key={this.state.followers.id}/>
